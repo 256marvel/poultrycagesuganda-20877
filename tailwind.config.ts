@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				uganda: {
+					green: 'hsl(var(--uganda-green))',
+					yellow: 'hsl(var(--uganda-yellow))',
+					red: 'hsl(var(--uganda-red))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

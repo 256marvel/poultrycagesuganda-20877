@@ -8,35 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Uganda-inspired poultry farm colors */
+    --background: 0 0% 99%;
+    --foreground: 120 8% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 8% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 8% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Uganda green - professional and agricultural */
+    --primary: 101 56% 39%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft agricultural green */
+    --secondary: 96 35% 92%;
+    --secondary-foreground: 101 56% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 100 12% 95%;
+    --muted-foreground: 120 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Uganda yellow - prosperity and growth */
+    --accent: 50 100% 50%;
+    --accent-foreground: 120 8% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Uganda red - for important CTAs */
+    --destructive: 0 73% 41%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 13% 88%;
+    --input: 120 13% 90%;
+    --ring: 101 56% 39%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom design tokens for poultry theme */
+    --uganda-green: 101 56% 39%;
+    --uganda-yellow: 50 100% 50%;
+    --uganda-red: 0 73% 41%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(101 56% 39%) 0%, hsl(96 45% 35%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(50 100% 50%) 0%, hsl(45 95% 55%) 100%);
+    
+    /* Professional shadows */
+    --shadow-soft: 0 2px 10px hsl(101 56% 39% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(101 56% 39% / 0.12);
+    --shadow-strong: 0 20px 60px hsl(101 56% 39% / 0.15);
 
     --sidebar-background: 0 0% 98%;
 
