@@ -18,7 +18,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/138ee670-3712-4a23-b2f6-7203df0d22a7.png" 
+              alt="Poultry Cages Uganda Logo" 
+              className="h-10 w-10"
+            />
             <div className="text-2xl font-bold text-primary">
               Poultry Cages Uganda
             </div>

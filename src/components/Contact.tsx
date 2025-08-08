@@ -9,7 +9,7 @@ const Contact = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone Numbers",
-      details: ["+256 700 123 456", "+256 750 789 012"]
+      details: ["+256 758 422 007", "+256 706 922 476"]
     },
     {
       icon: <Mail className="h-5 w-5" />,
@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       title: "Our Location",
-      details: ["Kampala, Uganda", "Serving all regions of Uganda"]
+      details: ["Kasangati, Kampala Uganda", "Serving all regions of Uganda"]
     },
     {
       icon: <Clock className="h-5 w-5" />,
@@ -123,7 +123,7 @@ const Contact = () => {
                 </p>
                 <Button size="lg" className="w-full">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call Now: +256 700 123 456
+                  Call Now: +256 758 422 007
                 </Button>
               </CardContent>
             </Card>
