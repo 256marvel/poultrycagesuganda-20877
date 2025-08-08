@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, LogOut } from "lucide-react";
+import { AuthModal } from "@/components/AuthModal";
+import { useAuth } from "@/hooks/useAuth";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -40,9 +44,33 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="default" size="sm">
-              Get Quote
-            </Button>
+            <div className="flex items-center gap-4">
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm">
+                      <User className="h-4 w-4 mr-2" />
+                      Profile
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem onClick={signOut}>
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <AuthModal mode="login">
+                  <Button variant="outline" size="sm">
+                    Login
+                  </Button>
+                </AuthModal>
+              )}
+              <Button variant="default" size="sm">
+                Get Quote
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,7 +100,31 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="w-fit">
+              <div className="pt-4 border-t border-border mt-4">
+                {user ? (
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">Welcome back!</p>
+                    <Button variant="outline" size="sm" onClick={signOut} className="w-full">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <AuthModal mode="login">
+                      <Button variant="outline" size="sm" className="w-full">
+                        Login
+                      </Button>
+                    </AuthModal>
+                    <AuthModal mode="signup">
+                      <Button variant="ghost" size="sm" className="w-full">
+                        Sign Up
+                      </Button>
+                    </AuthModal>
+                  </div>
+                )}
+              </div>
+              <Button variant="default" size="sm" className="w-fit mt-4">
                 Get Quote
               </Button>
             </div>
