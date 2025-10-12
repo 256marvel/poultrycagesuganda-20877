@@ -7,94 +7,14 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      profiles: {
-        Row: {
-          company_name: string | null
-          created_at: string
-          full_name: string | null
-          id: string
-          location: string | null
-          phone: string | null
-          role: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          company_name?: string | null
-          created_at?: string
-          full_name?: string | null
-          id?: string
-          location?: string | null
-          phone?: string | null
-          role?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          company_name?: string | null
-          created_at?: string
-          full_name?: string | null
-          id?: string
-          location?: string | null
-          phone?: string | null
-          role?: string | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      quotes: {
-        Row: {
-          cage_capacity: number | null
-          company: string | null
-          created_at: string
-          email: string
-          id: string
-          message: string | null
-          name: string
-          phone: string
-          project_type: string
-          status: string | null
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          cage_capacity?: number | null
-          company?: string | null
-          created_at?: string
-          email: string
-          id?: string
-          message?: string | null
-          name: string
-          phone: string
-          project_type: string
-          status?: string | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          cage_capacity?: number | null
-          company?: string | null
-          created_at?: string
-          email?: string
-          id?: string
-          message?: string | null
-          name?: string
-          phone?: string
-          project_type?: string
-          status?: string | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
