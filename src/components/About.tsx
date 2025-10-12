@@ -39,8 +39,8 @@ const About = () => {
                 providing comprehensive solutions for battery cage systems, automatic feeding, and drinking systems throughout Uganda.
               </p>
               <p>
-                Our expertise spans complete poultry farm setup, from initial consultation to final installation. 
-                We specialize in layer cage systems, automatic equipment, and all related poultry farming infrastructure.
+                Our expertise spans complete poultry farm setup for both <span className="font-bold text-primary">layers and broilers</span>, from initial consultation to final installation. 
+                We specialize in cage systems, automatic equipment, and all related poultry farming infrastructure.
               </p>
               <p className="text-primary font-semibold italic">
                 "Poultry is Our Wisest Pursuit" - This motto drives our commitment to helping farmers achieve maximum productivity and profitability.

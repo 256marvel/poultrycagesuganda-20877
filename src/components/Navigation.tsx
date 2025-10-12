@@ -14,9 +14,9 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
+    <nav className="bg-primary border-b-4 border-accent z-50 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
@@ -35,12 +35,12 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-primary-foreground hover:text-accent transition-colors duration-200 font-semibold"
               >
                 {item.name}
               </a>
             ))}
-            <Button variant="default" size="sm">
+            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-accent" size="sm">
               Get Quote
             </Button>
           </div>
@@ -51,28 +51,28 @@ const Navigation = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-primary-foreground" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-primary-foreground" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-primary-foreground/20 bg-primary">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+                  className="text-primary-foreground hover:text-accent transition-colors duration-200 font-semibold py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="w-fit">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold w-fit" size="sm">
                 Get Quote
               </Button>
             </div>

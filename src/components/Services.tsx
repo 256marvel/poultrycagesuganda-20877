@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Zap, Droplets, Recycle, Settings } from "lucide-react";
 import feedingImage from "@/assets/feeding-system.jpg";
@@ -10,7 +11,7 @@ const Services = () => {
     {
       icon: <Zap className="h-8 w-8 text-accent" />,
       title: "Automatic Feeding Systems",
-      description: "State-of-the-art automated feeding systems that ensure consistent nutrition delivery to your poultry.",
+      description: "State-of-the-art automated feeding systems for layers and broilers that ensure consistent nutrition delivery.",
       image: feedingImage,
       features: ["Timed feeding schedules", "Feed waste reduction", "Labor cost savings", "Nutritional consistency"]
     },
@@ -31,9 +32,9 @@ const Services = () => {
     {
       icon: <Settings className="h-8 w-8 text-primary" />,
       title: "Complete Equipment Supply",
-      description: "Full range of poultry equipment including cages, nipples, and farming accessories.",
+      description: "Full range of poultry equipment for layers and broilers including cages, nipples, and farming accessories.",
       image: cagesImage,
-      features: ["Battery cage systems", "Drinker nipples", "Layer equipment", "Installation service"]
+      features: ["Battery cage systems", "Drinker nipples", "Layer & Broiler equipment", "Installation service"]
     }
   ];
 
@@ -45,7 +46,7 @@ const Services = () => {
             Our Products & Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Complete poultry solutions from cage installation to automatic systems - everything you need for a modern poultry operation.
+            Complete poultry solutions for layers and broilers - from cage installation to automatic systems. Everything you need for a modern poultry operation.
           </p>
         </div>
 

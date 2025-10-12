@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-poultry-farm.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -28,7 +28,7 @@ const Hero = () => {
               <span className="text-accent">for Uganda</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Complete installation of battery cage systems, automatic feeding, drinking systems, and all poultry equipment. 
+              Complete installation of battery cage systems for <span className="font-bold text-primary">layers and broilers</span>, automatic feeding, drinking systems, and all poultry equipment. 
               <span className="text-primary font-semibold italic block mt-2">
                 "Poultry is Our Wisest Pursuit"
               </span>

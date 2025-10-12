@@ -8,54 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Uganda-inspired poultry farm colors */
-    --background: 0 0% 99%;
-    --foreground: 120 8% 15%;
+    /* Gen-Z vibrant poultry colors */
+    --background: 0 0% 100%;
+    --foreground: 150 10% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 120 8% 15%;
+    --card-foreground: 150 10% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 120 8% 15%;
+    --popover-foreground: 150 10% 12%;
 
-    /* Uganda green - professional and agricultural */
-    --primary: 101 56% 39%;
-    --primary-foreground: 0 0% 98%;
+    /* Vibrant Uganda green - fresh and bold */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Soft agricultural green */
-    --secondary: 96 35% 92%;
-    --secondary-foreground: 101 56% 25%;
+    /* Soft pastel secondary */
+    --secondary: 142 45% 95%;
+    --secondary-foreground: 142 76% 25%;
 
-    --muted: 100 12% 95%;
-    --muted-foreground: 120 8% 45%;
+    --muted: 142 20% 96%;
+    --muted-foreground: 150 8% 46%;
 
-    /* Uganda yellow - prosperity and growth */
-    --accent: 50 100% 50%;
-    --accent-foreground: 120 8% 15%;
+    /* Bright accent yellow - energetic */
+    --accent: 48 100% 62%;
+    --accent-foreground: 150 10% 12%;
 
-    /* Uganda red - for important CTAs */
-    --destructive: 0 73% 41%;
-    --destructive-foreground: 0 0% 98%;
+    /* Uganda red - vibrant CTA */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 120 13% 88%;
-    --input: 120 13% 90%;
-    --ring: 101 56% 39%;
+    --border: 142 20% 90%;
+    --input: 142 20% 94%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom design tokens for poultry theme */
-    --uganda-green: 101 56% 39%;
-    --uganda-yellow: 50 100% 50%;
-    --uganda-red: 0 73% 41%;
+    /* Custom Gen-Z design tokens */
+    --uganda-green: 142 76% 36%;
+    --uganda-yellow: 48 100% 62%;
+    --uganda-red: 0 84% 60%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(101 56% 39%) 0%, hsl(96 45% 35%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(50 100% 50%) 0%, hsl(45 95% 55%) 100%);
+    /* Vibrant gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(160 70% 45%) 100%);
+    --gradient-accent: linear-gradient(120deg, hsl(48 100% 62%) 0%, hsl(35 100% 65%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(142 45% 98%) 100%);
     
-    /* Professional shadows */
-    --shadow-soft: 0 2px 10px hsl(101 56% 39% / 0.08);
-    --shadow-medium: 0 8px 30px hsl(101 56% 39% / 0.12);
-    --shadow-strong: 0 20px 60px hsl(101 56% 39% / 0.15);
+    /* Modern shadows with color */
+    --shadow-soft: 0 4px 16px hsl(142 76% 36% / 0.1);
+    --shadow-medium: 0 10px 40px hsl(142 76% 36% / 0.15);
+    --shadow-strong: 0 20px 60px hsl(142 76% 36% / 0.2);
+    --shadow-accent: 0 8px 32px hsl(48 100% 62% / 0.25);
 
     --sidebar-background: 0 0% 98%;
 

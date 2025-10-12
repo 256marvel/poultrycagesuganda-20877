@@ -2,81 +2,82 @@ import { Facebook, Twitter, Instagram, Phone, Mail, MapPin } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-br from-primary via-primary to-uganda-green text-primary-foreground relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-uganda-yellow rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <h3 className="text-2xl font-bold">Poultry Cages Uganda</h3>
-              {/* Uganda Flag Element */}
-              <div className="flex">
+              {/* Uganda Flag */}
+              <div className="flex rounded overflow-hidden border-2 border-primary-foreground">
                 <div className="w-2 h-6 bg-uganda-red"></div>
                 <div className="w-2 h-6 bg-uganda-yellow"></div>
                 <div className="w-2 h-6 bg-uganda-green"></div>
               </div>
             </div>
-            <p className="text-background/80 mb-4 leading-relaxed">
-              Uganda's leading provider of professional poultry equipment and automatic systems. 
-              We install battery cages, feeding systems, and complete poultry solutions.
+            <p className="text-primary-foreground/90 mb-3 text-sm leading-relaxed">
+              Uganda's leading provider of poultry equipment for both layers and broilers.
             </p>
-            <p className="text-lg font-semibold italic text-accent">
+            <p className="text-xl font-bold italic text-accent">
               "Poultry is Our Wisest Pursuit"
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#home" className="text-background/80 hover:text-accent transition-colors">Home</a></li>
-              <li><a href="#about" className="text-background/80 hover:text-accent transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-background/80 hover:text-accent transition-colors">Services</a></li>
-              <li><a href="#gallery" className="text-background/80 hover:text-accent transition-colors">Gallery</a></li>
-              <li><a href="#contact" className="text-background/80 hover:text-accent transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
-            <div className="space-y-3 text-background/80">
+          {/* Quick Contact */}
+          <div className="md:col-span-1">
+            <h4 className="text-lg font-bold mb-4 text-accent">Get In Touch</h4>
+            <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 text-accent" />
                 <span>+256 758 422 007</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 text-accent" />
                 <span>+256 706 922 476</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 text-accent" />
                 <span>info@poultrycagesuganda.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4" />
-                <span>Kasangati, Kampala Uganda</span>
+                <MapPin className="h-4 w-4 text-accent" />
+                <span>Kasangati, Kampala</span>
               </div>
             </div>
+          </div>
 
-            {/* Social Media */}
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-background/80 hover:text-accent transition-colors">
+          {/* Social & Links */}
+          <div className="md:col-span-1">
+            <h4 className="text-lg font-bold mb-4 text-accent">Connect With Us</h4>
+            <div className="flex space-x-4 mb-6">
+              <a href="#" className="bg-primary-foreground/10 hover:bg-accent p-3 rounded-full transition-all duration-300 hover:scale-110">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-background/80 hover:text-accent transition-colors">
+              <a href="#" className="bg-primary-foreground/10 hover:bg-accent p-3 rounded-full transition-all duration-300 hover:scale-110">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-background/80 hover:text-accent transition-colors">
+              <a href="#" className="bg-primary-foreground/10 hover:bg-accent p-3 rounded-full transition-all duration-300 hover:scale-110">
                 <Instagram className="h-5 w-5" />
               </a>
+            </div>
+            <div className="space-y-2 text-sm">
+              <a href="#services" className="block hover:text-accent transition-colors">Our Services</a>
+              <a href="#gallery" className="block hover:text-accent transition-colors">Gallery</a>
+              <a href="#contact" className="block hover:text-accent transition-colors">Contact</a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-background/20 mt-8 pt-8 text-center">
-          <p className="text-background/60">
-            © 2024 Poultry Cages Uganda. All rights reserved. | Professional Poultry Equipment Solutions
+        <div className="border-t border-primary-foreground/20 pt-6 text-center">
+          <p className="text-sm text-primary-foreground/80">
+            © 2024 Poultry Cages Uganda. All rights reserved.
           </p>
         </div>
       </div>
