@@ -1,10 +1,31 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  email: z.string().email("Please enter a valid email"),
+  location: z.string().min(2, "Please enter your farm location"),
+  details: z.string().min(10, "Please provide more details about your needs"),
+});
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    location: "",
+    details: "",
+  });
+  const [loading, setLoading] = useState(false);
+
   const contactInfo = [
     {
       icon: <Phone className="h-5 w-5" />,
@@ -28,6 +49,50 @@ const Contact = () => {
     }
   ];
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      contactSchema.parse(formData);
+
+      // Create WhatsApp message
+      const message = `*New Quote Request*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Farm Location:* ${formData.location}%0A*Details:* ${formData.details}`;
+      const whatsappUrl = `https://wa.me/256758422007?text=${message}`;
+
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
+
+      toast({
+        title: "Success!",
+        description: "Redirecting you to WhatsApp to send your quote request.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        location: "",
+        details: "",
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validation Error",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCallNow = () => {
+    window.location.href = 'tel:+256758422007';
+  };
+
   return (
     <section id="contact" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -46,49 +111,75 @@ const Contact = () => {
             <CardHeader>
               <CardTitle>Get Your Free Quote</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Full Name
+                    </label>
+                    <Input 
+                      placeholder="Enter your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
+                    <Input 
+                      placeholder="Your phone number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                    />
+                  </div>
+                </div>
+                
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Full Name
+                    Email Address
                   </label>
-                  <Input placeholder="Enter your full name" />
+                  <Input 
+                    type="email"
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                  />
                 </div>
+                
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
+                    Farm Location
                   </label>
-                  <Input placeholder="Your phone number" />
+                  <Input 
+                    placeholder="Where is your poultry farm located?"
+                    value={formData.location}
+                    onChange={(e) => setFormData({...formData, location: e.target.value})}
+                    required
+                  />
                 </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
-                <Input placeholder="your.email@example.com" />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Farm Location
-                </label>
-                <Input placeholder="Where is your poultry farm located?" />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Project Details
-                </label>
-                <Textarea 
-                  placeholder="Tell us about your poultry setup needs (number of birds, preferred systems, etc.)"
-                  rows={4}
-                />
-              </div>
-              
-              <Button className="w-full" size="lg">
-                Submit Quote Request
-              </Button>
+                
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Project Details
+                  </label>
+                  <Textarea 
+                    placeholder="Tell us about your poultry setup needs (number of birds, preferred systems, etc.)"
+                    rows={4}
+                    value={formData.details}
+                    onChange={(e) => setFormData({...formData, details: e.target.value})}
+                    required
+                  />
+                </div>
+                
+                <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                  {loading ? "Sending..." : "Submit Quote Request"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
 
@@ -121,7 +212,7 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-4">
                   Call us now for immediate assistance and expert consultation.
                 </p>
-                <Button size="lg" className="w-full">
+                <Button size="lg" className="w-full" onClick={handleCallNow}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now: +256 758 422 007
                 </Button>

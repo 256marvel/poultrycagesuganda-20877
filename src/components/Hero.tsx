@@ -3,6 +3,15 @@ import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-poultry-farm.jpg";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleCallNow = () => {
+    window.location.href = 'tel:+256758422007';
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
@@ -36,11 +45,11 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="text-lg px-8 py-6 h-auto">
+            <Button size="lg" className="text-lg px-8 py-6 h-auto" onClick={scrollToContact}>
               Get Free Quote
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto" onClick={handleCallNow}>
               <Phone className="mr-2 h-5 w-5" />
               Call Us Now
             </Button>
