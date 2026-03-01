@@ -26,7 +26,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="bg-primary border-b-4 border-accent z-50 shadow-lg">
+      <nav className="bg-background border-b-2 border-primary/20 z-50 shadow-md sticky top-0">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -34,10 +34,10 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/138ee670-3712-4a23-b2f6-7203df0d22a7.png" 
                 alt="Poultry Cages Uganda Logo" 
-                className="h-10 w-10"
+                className="h-12 w-12"
               />
-              <div className="text-2xl font-bold text-primary-foreground">
-                Poultry Cages Uganda
+              <div className="text-2xl font-bold text-primary">
+                Poultry<span className="text-accent-foreground">Cages</span> <span className="text-muted-foreground font-normal text-lg">Uganda</span>
               </div>
             </div>
 
@@ -47,7 +47,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-primary-foreground hover:text-accent transition-colors duration-200 font-semibold"
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-semibold"
                 >
                   {item.name}
                 </a>
@@ -67,17 +67,17 @@ const Navigation = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => navigate('/admin/settings')}
-                      className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
-                    >
-                      <Settings className="h-4 w-4 mr-2" />
-                      Admin
+                    className="border-primary/20 text-primary hover:bg-primary/10"
+                  >
+                    <Settings className="h-4 w-4 mr-2" />
+                    Admin
                     </Button>
                   )}
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => signOut()}
-                    className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                    className="border-primary/20 text-foreground hover:bg-primary/10"
                   >
                     <LogOut className="h-4 w-4 mr-2" />
                     Logout
@@ -88,7 +88,7 @@ const Navigation = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => setShowAuthModal(true)}
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="border-primary/20 text-foreground hover:bg-primary/10"
                 >
                   <User className="h-4 w-4 mr-2" />
                   Login
@@ -102,22 +102,22 @@ const Navigation = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-primary-foreground" />
+              <X className="h-6 w-6 text-foreground" />
               ) : (
-                <Menu className="h-6 w-6 text-primary-foreground" />
+                <Menu className="h-6 w-6 text-foreground" />
               )}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-primary-foreground/20 bg-primary">
+            <div className="md:hidden py-4 border-t border-border bg-background">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-primary-foreground hover:text-accent transition-colors duration-200 font-semibold py-2"
+                    className="text-foreground hover:text-primary transition-colors duration-200 font-semibold py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -141,7 +141,7 @@ const Navigation = () => {
                           navigate('/admin/settings');
                           setIsMenuOpen(false);
                         }}
-                        className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 w-fit"
+                        className="border-primary/20 text-foreground hover:bg-primary/10 w-fit"
                       >
                         <Settings className="h-4 w-4 mr-2" />
                         Admin Settings
@@ -154,7 +154,7 @@ const Navigation = () => {
                         signOut();
                         setIsMenuOpen(false);
                       }}
-                      className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 w-fit"
+                      className="border-primary/20 text-foreground hover:bg-primary/10 w-fit"
                     >
                       <LogOut className="h-4 w-4 mr-2" />
                       Logout
@@ -168,7 +168,7 @@ const Navigation = () => {
                       setShowAuthModal(true);
                       setIsMenuOpen(false);
                     }}
-                    className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 w-fit"
+                    className="border-primary/20 text-foreground hover:bg-primary/10 w-fit"
                   >
                     <User className="h-4 w-4 mr-2" />
                     Login
