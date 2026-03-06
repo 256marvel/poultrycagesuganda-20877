@@ -3,11 +3,6 @@ import { Facebook, Twitter, Instagram, Phone, Mail, MapPin } from "lucide-react"
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-primary via-primary to-uganda-green text-primary-foreground relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-uganda-yellow rounded-full blur-3xl"></div>
-      </div>
       
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
