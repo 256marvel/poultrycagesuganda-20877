@@ -31,11 +31,13 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/138ee670-3712-4a23-b2f6-7203df0d22a7.png" 
-                alt="Poultry Cages Uganda Logo" 
-                className="h-12 w-12"
-              />
+              <div className="bg-foreground rounded-full p-1.5">
+                <img 
+                  src="/lovable-uploads/138ee670-3712-4a23-b2f6-7203df0d22a7.png" 
+                  alt="Poultry Cages Uganda Logo" 
+                  className="h-10 w-10"
+                />
+              </div>
               <div className="text-2xl font-bold text-primary">
                 Poultry<span className="text-accent-foreground">Cages</span> <span className="text-muted-foreground font-normal text-lg">Uganda</span>
               </div>
