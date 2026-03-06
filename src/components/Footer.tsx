@@ -8,14 +8,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div className="md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="mb-4">
               <h3 className="text-2xl font-bold">Poultry Cages Uganda</h3>
-              {/* Uganda Flag */}
-              <div className="flex rounded overflow-hidden border-2 border-primary-foreground">
-                <div className="w-2 h-6 bg-uganda-red"></div>
-                <div className="w-2 h-6 bg-uganda-yellow"></div>
-                <div className="w-2 h-6 bg-uganda-green"></div>
-              </div>
             </div>
             <p className="text-primary-foreground/90 mb-3 text-sm leading-relaxed">
               Uganda's leading provider of poultry equipment for both layers and broilers.
