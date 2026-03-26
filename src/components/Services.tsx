@@ -1,14 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Zap, Droplets, Recycle, Settings } from "lucide-react";
+import { Zap, Droplets, Recycle, Building2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import feedingImage from "@/assets/feeding-system.jpg";
 import drinkingImage from "@/assets/drinking-system.jpg";
 import cagesImage from "@/assets/battery-cages.jpg";
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
+      id: "automatic-feeding-systems",
       icon: <Zap className="h-8 w-8 text-accent" />,
       title: "Automatic Feeding Systems",
       description: "State-of-the-art automated feeding systems for layers and broilers that ensure consistent nutrition delivery.",
@@ -16,6 +19,7 @@ const Services = () => {
       features: ["Timed feeding schedules", "Feed waste reduction", "Labor cost savings", "Nutritional consistency"]
     },
     {
+      id: "automatic-water-systems",
       icon: <Droplets className="h-8 w-8 text-primary" />,
       title: "Automatic Water Systems",
       description: "Clean, reliable water delivery systems with nipple drinkers and pressure regulation.",
@@ -23,6 +27,7 @@ const Services = () => {
       features: ["Nipple drinker systems", "Pressure regulation", "Clean water delivery", "Leak prevention"]
     },
     {
+      id: "manure-removal-systems",
       icon: <Recycle className="h-8 w-8 text-uganda-red" />,
       title: "Manure Removal Systems",
       description: "Efficient automated manure removal systems that maintain hygiene and reduce manual labor.",
@@ -30,11 +35,12 @@ const Services = () => {
       features: ["Automated collection", "Hygiene maintenance", "Odor control", "Easy disposal"]
     },
     {
-      icon: <Settings className="h-8 w-8 text-primary" />,
-      title: "Complete Equipment Supply",
-      description: "Full range of poultry equipment for layers and broilers including cages, nipples, and farming accessories.",
-      image: cagesImage,
-      features: ["Battery cage systems", "Drinker nipples", "Layer & Broiler equipment", "Installation service"]
+      id: "farm-management-services",
+      icon: <Building2 className="h-8 w-8 text-primary" />,
+      title: "Farm Management Services",
+      description: "Complete farm management for absentee owners — from construction to full production. We run your farm while you're away.",
+      image: feedingImage,
+      features: ["End-to-end farm setup", "Daily operations", "Regular reporting", "Production optimization"]
     }
   ];
 
@@ -78,7 +84,7 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" onClick={() => navigate(`/products/${service.id}`)}>
                   Learn More
                 </Button>
               </CardContent>
@@ -87,7 +93,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="px-8">
+          <Button size="lg" className="px-8" onClick={() => navigate("/products")}>
             View All Products
           </Button>
         </div>
